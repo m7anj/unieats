@@ -1,5 +1,5 @@
+import { Poppins_400Regular, useFonts } from '@expo-google-fonts/poppins';
 import { Stack } from "expo-router";
-import { useFonts, Poppins_400Regular } from '@expo-google-fonts/poppins';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import "../global.css";

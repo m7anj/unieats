@@ -1,17 +1,20 @@
-import { StyleSheet } from 'react-native';
-
-const styles = StyleSheet.create({})
+import { Pressable, Text } from 'react-native';
 
 interface MainButtonProps {
   onPress: () => void;
+  children: React.ReactNode;
+  className?: string;
 }
 
-export const MainButton = ({
-   onPress }: MainButtonProps) =>
-    (<button
-      className="bg-primary-dark text-text-dark rounded-full px-4 py-2 font-bold"
-      onClick={onPress}
-    />
+export const MainButton = ({ onPress, children, className }: MainButtonProps) => (
+  <Pressable
+    className="bg-primary-dark rounded-full px-4 py-2"
+    onPress={onPress}
+  >
+    <Text className={`text-text-dark font-poppins font-bold ${className || ''}`}>
+      {children}
+    </Text>
+  </Pressable>
 );
 
 export default MainButton;

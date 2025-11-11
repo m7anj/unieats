@@ -1,7 +1,10 @@
-import { Link } from "expo-router";
+import { useRouter } from "expo-router";
 import { Text, View } from "react-native";
+import MainButton from "./components/MainButton";
 
 export default function Index() {
+  const router = useRouter();
+
   return (
     <View
       style={{
@@ -10,15 +13,15 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <Text className="text-6xl color-primary-dark font-bold">UniEats</Text>
-      <Text className="text-2xl color-hint-dark text-center">
+      <Text className="text-6xl color-primary-dark">UniEats</Text>
+      <Text className="text-1xl color-hint-dark text-center font-poppins">
         Eat smart, eat fast, eat what you have.
       </Text>
-      <Link href="/camera" className="mt-16">
-        <Text className="text-2xl color-hint-dark text-center">
+      <View className="mt-16">
+        <MainButton onPress={() => router.push("/camera")}>
           Get Started! 📷
-        </Text>
-      </Link>
+        </MainButton>
+      </View>
     </View>
   );
 }

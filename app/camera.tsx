@@ -3,8 +3,9 @@ import { Button, Text, View } from 'react-native';
 
 import { CameraView, useCameraPermissions } from 'expo-camera';
 
-const camera = () => {
+import { PhotoButton } from './components/PhotoButton';
 
+const camera = () => {
   const [permission, requestPermission] = useCameraPermissions();
 
   if (permission === null) {
@@ -17,9 +18,22 @@ const camera = () => {
       </View>
   }
 
+  const test = () => {
+    console.log('test')
+  }
+
   return (
-    <CameraView style={{ flex: 1}}>
-    </CameraView>
+    <View style={{ flex: 1 }}>
+
+      <CameraView style={{ flex: 1 }}>
+      </CameraView>
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+
+        <PhotoButton onPress={test}></PhotoButton>
+
+      </View>
+      
+    </View>
   );
 }
 
